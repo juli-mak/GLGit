@@ -10,7 +10,7 @@ struct element {
 
 liste creerliste() {
     liste l = (liste) malloc (sizeof(struct element));
-    l->next=NULL;
+    l->contenu = NULL;
     l->contenu=(void *) malloc (sizeof(void *));
     return l;
 }
@@ -43,7 +43,7 @@ void afficherliste(liste l) {
         affichage_voie(tmp->contenu);
         tmp=tmp->next;
     }
-    while (tmp->next != NULL);
+    while (tmp && tmp->next != NULL) { ... }
 }
 
 int case_vide(liste l) {
